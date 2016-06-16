@@ -6,6 +6,7 @@
 #include "Cube.h"
 #include "ofxJSON.h"
 #include "ofFileUtils.h"
+#include <SoundController.hpp>
 
 
 
@@ -55,6 +56,8 @@ class ofApp : public ofBaseApp{
     void setIntensityCube();
     
     vector<Cube> cubes;
+    
+    SoundController soundController;
 
     
     		

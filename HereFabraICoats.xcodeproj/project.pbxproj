@@ -14,6 +14,7 @@
 		6B5901E1EA7DAE21C28DF74A /* artnet.c in Sources */ = {isa = PBXBuildFile; fileRef = 629682E3A17A7B2E3ED35410 /* artnet.c */; };
 		73ECD6C7FD72E41CA45E8ED8 /* receive.c in Sources */ = {isa = PBXBuildFile; fileRef = C0ED6090122A9FFCC8B4487B /* receive.c */; };
 		838A19451D12EC6F00F7B04B /* Sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838A19431D12EC6F00F7B04B /* Sound.cpp */; };
+		838A194A1D12F40000F7B04B /* SoundController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838A19481D12F40000F7B04B /* SoundController.cpp */; };
 		960D20B191346612D5C05A6A /* ofxTCPClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF88F02779DD820913ACEA06 /* ofxTCPClient.cpp */; };
 		9835CE7A8F2A5B83C3C6D406 /* ofxArtnet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3B45B441560B17233E62CC7 /* ofxArtnet.cpp */; };
 		9A448A711D0DAA5500CBDE1D /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A448A681D0DAA5500CBDE1D /* Cube.cpp */; };
@@ -81,6 +82,8 @@
 		74DB1B47B9CA58659332B11C /* misc.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = misc.h; path = ../../../addons/ofxArtnet/libs/artnet/include/misc.h; sourceTree = SOURCE_ROOT; };
 		838A19431D12EC6F00F7B04B /* Sound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sound.cpp; sourceTree = "<group>"; };
 		838A19441D12EC6F00F7B04B /* Sound.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sound.hpp; sourceTree = "<group>"; };
+		838A19481D12F40000F7B04B /* SoundController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundController.cpp; sourceTree = "<group>"; };
+		838A19491D12F40000F7B04B /* SoundController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SoundController.hpp; sourceTree = "<group>"; };
 		8D6CAF0C75B88E9AD9474BCD /* unistd_d.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = unistd_d.h; path = ../../../addons/ofxArtnet/libs/artnet/include/unistd_d.h; sourceTree = SOURCE_ROOT; };
 		97580EF680BFC3FD401308B7 /* transmit.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = transmit.c; path = ../../../addons/ofxArtnet/libs/artnet/src/transmit.c; sourceTree = SOURCE_ROOT; };
 		9A448A681D0DAA5500CBDE1D /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cube.cpp; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				9A448A701D0DAA5500CBDE1D /* Par.h */,
 				838A19431D12EC6F00F7B04B /* Sound.cpp */,
 				838A19441D12EC6F00F7B04B /* Sound.hpp */,
+				838A19481D12F40000F7B04B /* SoundController.cpp */,
+				838A19491D12F40000F7B04B /* SoundController.hpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -429,6 +434,7 @@
 				5EB5F47132F1826A6E2BF452 /* tod.c in Sources */,
 				C82579070C946892DD20550D /* transmit.c in Sources */,
 				BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */,
+				838A194A1D12F40000F7B04B /* SoundController.cpp in Sources */,
 				9A448A751D0DAA5500CBDE1D /* Par.cpp in Sources */,
 				9A448A741D0DAA5500CBDE1D /* ofApp.cpp in Sources */,
 				FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */,

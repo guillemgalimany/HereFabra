@@ -22,7 +22,7 @@ public:
     int id;
     int installation;
     
-    Sound (int id, int installation, string filename);
+    Sound (int, int, string);
     
     ofSoundPlayer soL;
     ofSoundPlayer soM;

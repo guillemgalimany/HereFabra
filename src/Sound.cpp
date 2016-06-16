@@ -16,18 +16,18 @@ Sound::Sound(int id_, int installation_, string instrument){
     soL.load(tempFilename,true);
     soL.setLoop(true);
     
-    string tempFilename = instrument + "Mitja.mp3";
-    soM.load(tempFilename, true);
+    string tempFilename1 = instrument + "Mitja.mp3";
+    soM.load(tempFilename1, true);
     soM.setLoop(true);
     
-    string tempFilename = instrument + "Rapid.mp3";
-    soH.load(tempFilename, true);
+    string tempFilename2 = instrument + "Rapid.mp3";
+    soH.load(tempFilename2, true);
     soH.setLoop(true);
     
 }
 
 
-Sound::playSound(int tempo){
+void Sound::playSound(int tempo){
     switch (tempo) {
         case 1:
             soL.play();
