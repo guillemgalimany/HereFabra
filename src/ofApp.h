@@ -6,8 +6,7 @@
 #include "Cube.h"
 #include "ofxJSON.h"
 #include "ofFileUtils.h"
-
-
+#include <SoundController.hpp>
 
 
 
@@ -58,9 +57,13 @@ class ofApp : public ofBaseApp{
     
     vector<Cube> cubes;
     
+<<<<<<< HEAD
     
     int installation1weight = 0;
     int installation2weight = 0;
+=======
+    SoundController soundController;
+>>>>>>> 49445d40700006ecd00453c9d2c1bb2c6b700565
 
     
     

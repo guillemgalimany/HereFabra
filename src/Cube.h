@@ -23,6 +23,7 @@ class Cube {
 public:
     
     int id;
+
     int swingLeft;
     int swingRight;
     

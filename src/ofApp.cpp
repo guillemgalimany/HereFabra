@@ -5,6 +5,7 @@
 #include <sstream>
 #include <iostream>
 
+
 //--------------------------------------------------------------
 void ofApp::setup(){
     
@@ -27,6 +28,8 @@ void ofApp::setup(){
     cubes.push_back(tempCube4);
     Cube tempCube5(5,4,1);
     cubes.push_back(tempCube5);
+    
+    soundController.initialize();
 
 
 }
