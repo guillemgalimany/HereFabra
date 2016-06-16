@@ -125,7 +125,7 @@ void Par::fadeColor()
     
     float resta = currentTime - timef;
     
-    //ofLog() << "timeInSeconds" << " - " << timeInSeconds;
+    ofLog() << "timeInSeconds" << " - " << timeInSeconds;
     
     color.lerp(myNewColor, timeInSeconds);
     
@@ -174,7 +174,7 @@ void Par::sinusoidalMove() //modula el color actual reduint-ne la intensitat i t
     //color.setBrightness(200+ sin(ofGetElapsedTimeMillis()*0.001 + (0.78*id)) * 50);
 }
 
-void Par::triggerChangeCubeColor(ofColor newColor_,float amplitude_, float period_)
+void Par::triggerChangeCubeColor(ofColor newColor_,float amplitude_, float period_, float fadeTime_)
 {
     
     //actualitzo parametres oscilacio
@@ -191,7 +191,7 @@ void Par::triggerChangeCubeColor(ofColor newColor_,float amplitude_, float perio
     timef = ofGetElapsedTimeMillis();
     
     //temps que trigare a fadejar
-    fadeTime = 0.5;
+    fadeTime = fadeTime_;
     
     //entro al loop de fer fade
     isFadeColor = true;

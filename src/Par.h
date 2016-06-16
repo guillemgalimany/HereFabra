@@ -87,7 +87,7 @@ public:
     void sinusoidalMove();
     void triggerSinusoidalMove(float amplitude, float frequency);
     
-    void triggerChangeCubeColor(ofColor newColor_,float amplitude_, float period_);
+    void triggerChangeCubeColor(ofColor newColor_,float amplitude_, float period_, float fadeTime_);
 
     void changeCubeColor();
     float cubeTime;

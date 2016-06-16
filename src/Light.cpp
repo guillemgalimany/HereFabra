@@ -289,17 +289,42 @@ void Light::lightTheCube(int id, ofColor targetColor, int swingIntensity)
         
         int oscAmplitude = 30 ;
         
+        float fadeTime = 0.5;
+        
         int minIntensity = oscAmplitude + 10;
         
         float colorIntensity = minIntensity + ( ( (255 - oscAmplitude) - minIntensity ) * ( (float)swingIntensity * 0.17 ) );
         
-        ofLog() << "colorIntensity" << " - " << colorIntensity;
+        //ofLog() << "colorIntensity" << " - " << colorIntensity;
         
         ofColor myColor = ofColor(255,255,0);
         
         myColor.setBrightness(colorIntensity);
         
-        pars[parsToUseIndex[i]].triggerChangeCubeColor(myColor, oscAmplitude, oscPeriod);
+        pars[parsToUseIndex[i]].triggerChangeCubeColor(myColor, oscAmplitude, oscPeriod, fadeTime);
+        
+    }
+    
+}
+
+void Light::lightTheTruss(int id, ofColor color1, ofColor color2, int weightColor1, int weightColor2)
+{
+    
+    vector<int> parsToUseIndex = parCubeAssign [id-1];
+    
+    for (int i = 0 ; i < parsToUseIndex.size();i++)
+    {
+        
+        int oscAmplitude = 30 ;
+        
+        int difference = weightColor2 - weightColor1;
+        
+        float weight = ofMap(difference, -12, 12, 0, 1);
+        
+        ofColor targetColor = color1.lerp(color2, weight);
+        
+        pars[parsToUseIndex[i]].triggerChangeCubeColor(targetColor, oscAmplitude, oscPeriod, 5.0);
+        
         
     }
     

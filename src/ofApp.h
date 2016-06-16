@@ -57,7 +57,11 @@ class ofApp : public ofBaseApp{
     void setIntensityCube();
     
     vector<Cube> cubes;
+    
+    
+    int installation1weight = 0;
+    int installation2weight = 0;
 
     
-    		
+    
 };

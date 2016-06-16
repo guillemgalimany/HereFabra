@@ -206,6 +206,21 @@ void ofApp::requestDataServer()
         
     }
     
+    for (int i = 0; i < cubes.size()+1; i++)
+    {
+        installation1weight += serverData[1][i];
+        installation2weight += serverData[2][i];
+    }
+    
+    ofColor installation1color = ofColor(255,0,0);
+    ofColor installation2color = ofColor(0,255,0);
+
+    
+    Light::getInstance().lightTheTruss(6, installation1color, installation2color, installation1weight, installation2weight);
+
+    installation1weight = 0;
+    installation2weight = 0;
+    
 
     
 }
