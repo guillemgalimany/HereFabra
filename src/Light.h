@@ -70,7 +70,7 @@ public:
     
     void update();
     
-    void lightTheCube(int id, ofColor targetColor, float amplitude);
+    void lightTheCube(int id, ofColor targetColor, int swingIntensity);
     
     
     long map(long x, long in_min, long in_max, long out_min, long out_max)
@@ -78,6 +78,11 @@ public:
         return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
     
+    
+    
+    // OSCILATION
+    int oscPeriod = 3;
+
 
     
     bool isNodeConnected = false;

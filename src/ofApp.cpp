@@ -54,54 +54,6 @@ void ofApp::update(){
     }
     
     
-//
-//    ofHttpResponse resp = ofLoadURL("http://here.alquimia.io/backend/api/measurements-last/?format=json");
-//    cout << resp.data << endl;
-//    
-//    //ofFile newFile(ofToDataPath("temp.txt")); //file doesn't exist yet
-//    
-////    ofFile file(ofToDataPath("fitxertemporal.txt"));
-////    file << resp.data;
-////    file.close();
-//
-//    
-//    string str = resp.data;
-//    ofBuffer msg(str.c_str(), str.length());
-//    ofBufferToFile("out.txt", msg);
-//    
-////    cout << resp.data << endl;
-//
-//    if (str != "[]")
-//    {
-//        result.open("out.txt");
-//        cout << result[0]["installationId"].asString() << endl;
-//        //cout << result.type() << endl;
-//        
-//        
-//        
-//        
-//        for(int i = 0; i < (int)result.type(); i++)
-//        {
-//            string intallationIdStr = result[i]["installationId"].asString();
-//            
-//            string swingIdStr =result[i]["swingId"].asString();
-//            
-//            std::string::size_type sz;   // alias of size_t
-//            
-//            int intallationId = std::stoi (intallationIdStr);
-//            
-//            int swingId = std::stoi (intallationIdStr,&sz);
-//
-//            int tempoValue = result[i]["tempoValue"].asInt();
-//            
-//            serverData[ intallationId ][ swingId ] = tempoValue;
-//        }
-//
-//    }
-    
-    //ss << "firstName          = " << result["firstName"].asString() << std::endl;
-
-    
     
     
     //--------------------------------------------------------------
