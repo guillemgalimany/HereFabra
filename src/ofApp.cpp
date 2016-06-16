@@ -196,13 +196,15 @@ void ofApp::requestDataServer()
                 
                 std::string::size_type sz;   // alias of size_t
                 
-                int intallationId = std::stoi (intallationIdStr);
+                int installationId = std::stoi (intallationIdStr);
                 
                 int swingId = std::stoi (swingIdStr,&sz);
                 
                 int tempoValue = result[i]["tempoValue"].asInt();
                 
-                serverData[ intallationId - 1 ][ swingId - 1 ] = tempoValue;
+                serverData[ installationId - 1 ][ swingId - 1 ] = tempoValue;
+                
+                soundController.playSwing(installationId, swingId, tempoValue);
                 
             }
         }
