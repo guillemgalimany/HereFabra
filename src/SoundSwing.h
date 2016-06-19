@@ -22,6 +22,7 @@ public:
     
     int id;
     int installation;
+    string instrument;
     
     
     //SoundSwing();

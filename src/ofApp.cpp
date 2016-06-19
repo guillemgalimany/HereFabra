@@ -29,8 +29,18 @@ void ofApp::setup(){
     Cube tempCube5(5,4,1);
     cubes.push_back(tempCube5);
     
-    soundController.initialize();
-
+    //soundController.initialize();
+    
+    
+    //soundController.playSwing(1, 2, 2);
+    //soundController.playSwing(2, 3, 2);
+//    swing21.load("SynthLent.mp3");
+//    swing21.setLoop(true);
+//    swing21.play();
+//    
+//    swing33.load("GuitarraMitja.mp3");
+//    swing33.setLoop(true);
+//    swing33.play();
 
 }
 
@@ -206,7 +216,8 @@ void ofApp::requestDataServer()
                 
                 serverData[ installationId - 1 ][ swingId - 1 ] = tempoValue;
                 
-                soundController.playSwing(installationId, swingId, tempoValue);
+                //soundController.playSwing(installationId, swingId, tempoValue);
+                playSound(installationId, swingId, tempoValue);
                 
             }
         }
@@ -253,6 +264,104 @@ void ofApp::exit()
     TCP.close();
 
 }
+
+void ofApp::playSound(int installation, int swingID, int tempo){
+    
+    string ritme;
+    switch (tempo) {
+        case 1:
+            ritme = "Lent.mp3";
+            break;
+        case 2:
+            ritme = "Mitja.mp3";
+            break;
+        case 3:
+            ritme = "Rapid.mp3";
+            break;
+            
+        default:
+            break;
+    } 
+    
+    string filename;
+    switch (installation) {
+        case 2:
+            switch (swingID) {
+                case 1:
+                    filename = "Synth" + ritme;
+                    swing21.load(filename);
+                    swing21.setLoop(true);
+                    swing21.play();
+                    break;
+                case 2:
+                    filename = "Kick" + ritme;
+                    swing22.load(filename);
+                    swing22.setLoop(true);
+                    swing22.play();
+                    break;
+                case 3:
+                    filename = "Horns" + ritme;
+                    swing23.load(filename);
+                    swing23.setLoop(true);
+                    swing23.play();
+                    break;
+                    
+                case 4:
+                    filename = "Percu" + ritme;
+                    swing24.load(filename);
+                    swing24.setLoop(true);
+                    swing24.play();
+                    break;
+                    
+                default:
+                    break;
+            }
+
+            break;
+            
+        case 3:
+            switch (swingID) {
+                case 1:
+                    filename = "Ambient" + ritme;
+                    swing31.load(filename);
+                    swing31.setLoop(true);
+                    swing31.play();
+                    break;
+                case 2:
+                    filename = "Cavall" + ritme;
+                    swing32.load(filename);
+                    swing32.setLoop(true);
+                    swing32.play();
+                    break;
+                case 3:
+                    filename = "Guitarra" + ritme;
+                    swing33.load(filename);
+                    swing33.setLoop(true);
+                    swing33.play();
+                    break;
+                    
+                case 4:
+                    filename = "Baix" + ritme;
+                    swing34.load(filename);
+                    swing34.setLoop(true);
+                    swing34.play();
+                    break;
+                    
+                default:
+                    break;
+            }
+            break;
+
+            
+        default:
+            break;
+    }
+
+
+
+
+}
+
 
 
 
