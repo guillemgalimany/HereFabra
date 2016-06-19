@@ -182,14 +182,18 @@ void ofApp::setIntensityCube()
 void ofApp::requestDataServer()
 {
     
+    //Es crea un objecte http amb l'adreça del servidor
     ofHttpResponse resp = ofLoadURL("http://here.alquimia.io/backend/api/measurements-last/?format=json");
     cout << resp.data << endl;
     
     
+    //S'emmagatzemen les dades en un fitxer de text
     string str = resp.data;
     ofBuffer msg(str.c_str(), str.length());
     ofBufferToFile("out.txt", msg);
     
+    
+    //Es posa la matriu de dades a 0
     for (int i = 0; i < 3 ; i++ )
     {
         for (int j = 0; j < 5 ; j++ )
@@ -198,6 +202,8 @@ void ofApp::requestDataServer()
         }
     }
     
+    
+    //Si el cont¡ngut de la url no és buit, és llegeix i s'omple la matriu de dades, canvia el color del truss en funció de les dades
     if (str != "[]")
     {
             
@@ -224,28 +230,8 @@ void ofApp::requestDataServer()
                 
                 serverData[ installationId - 1 ][ swingId - 1 ] = tempoValue;
                 
-                //soundController.playSwing(installationId, swingId, tempoValue);
-                
             }
         }
-        
-        for (int i = 0; i < 3 ; i++ )
-        {
-            for (int j = 0; j < 5 ; j++ )
-            {
-
-                if ( prevServerData[i][j] != serverData[i][j])
-                {
-                    playSound(i+1, j+1, serverData[i][j]);
-                }
-                
-                prevServerData[i][j] = serverData[i][j];
-            
-            }
-        }
-        
-
-        
     
         for (int i = 0; i < cubes.size()+1; i++)
         {
@@ -261,8 +247,27 @@ void ofApp::requestDataServer()
 
         installation1weight = 0;
         installation2weight = 0;
-    
     }
+    
+    
+    
+    //Si les dades han canviat respecte a la consulta anterior, és canvien els sons que s'estàn reproduïnt
+    for (int i = 0; i < 3 ; i++ )
+    {
+        for (int j = 0; j < 5 ; j++ )
+        {
+            
+            if ( prevServerData[i][j] != serverData[i][j])
+            {
+                playSound(i+1, j+1, serverData[i][j]);
+            }
+            
+            prevServerData[i][j] = serverData[i][j];
+            
+        }
+    }
+    
+    
     
 }
 
