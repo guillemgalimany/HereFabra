@@ -190,9 +190,17 @@ void ofApp::requestDataServer()
     ofBuffer msg(str.c_str(), str.length());
     ofBufferToFile("out.txt", msg);
     
+    for (int i = 0; i < 3 ; i++ )
+    {
+        for (int j = 0; j < 5 ; j++ )
+        {
+            serverData[i][j] = 0 ;
+        }
+    }
     
     if (str != "[]")
     {
+            
         result.open("out.txt");
         
         int numMissatges = (int)result.type();
@@ -217,12 +225,27 @@ void ofApp::requestDataServer()
                 serverData[ installationId - 1 ][ swingId - 1 ] = tempoValue;
                 
                 //soundController.playSwing(installationId, swingId, tempoValue);
-                playSound(installationId, swingId, tempoValue);
                 
             }
         }
         
-    
+        for (int i = 0; i < 3 ; i++ )
+        {
+            for (int j = 0; j < 5 ; j++ )
+            {
+
+                if ( prevServerData[i][j] != serverData[i][j])
+                {
+                    playSound(i+1, j+1, serverData[i][j]);
+                }
+                
+                prevServerData[i][j] = serverData[i][j];
+            
+            }
+        }
+        
+
+        
     
         for (int i = 0; i < cubes.size()+1; i++)
         {
@@ -267,8 +290,13 @@ void ofApp::exit()
 
 void ofApp::playSound(int installation, int swingID, int tempo){
     
+    //string swing = "swing" + installation + swingID;
+    
     string ritme;
     switch (tempo) {
+        case 0:
+            ritme = "NO_MUSIC";
+            break;
         case 1:
             ritme = "Lent.mp3";
             break;
@@ -288,29 +316,45 @@ void ofApp::playSound(int installation, int swingID, int tempo){
         case 2:
             switch (swingID) {
                 case 1:
+                    if (ritme != "NO_MUSIC"){
                     filename = "Synth" + ritme;
-                    swing21.load(filename);
-                    swing21.setLoop(true);
-                    swing21.play();
+                        swing21.load(filename);
+                        swing21.setLoop(true);
+                        swing21.play();
+                    }
+                    else
+                        swing21.stop();
                     break;
                 case 2:
-                    filename = "Kick" + ritme;
-                    swing22.load(filename);
-                    swing22.setLoop(true);
-                    swing22.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Kick" + ritme;
+                        swing22.load(filename);
+                        swing22.setLoop(true);
+                        swing22.play();
+                    }
+                    else
+                        swing22.stop();
                     break;
                 case 3:
-                    filename = "Horns" + ritme;
-                    swing23.load(filename);
-                    swing23.setLoop(true);
-                    swing23.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Horns" + ritme;
+                        swing23.load(filename);
+                        swing23.setLoop(true);
+                        swing23.play();
+                    }
+                    else
+                        swing23.stop();
                     break;
                     
                 case 4:
-                    filename = "Percu" + ritme;
-                    swing24.load(filename);
-                    swing24.setLoop(true);
-                    swing24.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Percu" + ritme;
+                        swing24.load(filename);
+                        swing24.setLoop(true);
+                        swing24.play();
+                      }
+                    else
+                        swing24.stop();
                     break;
                     
                 default:
@@ -322,29 +366,44 @@ void ofApp::playSound(int installation, int swingID, int tempo){
         case 3:
             switch (swingID) {
                 case 1:
-                    filename = "Ambient" + ritme;
-                    swing31.load(filename);
-                    swing31.setLoop(true);
-                    swing31.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Ambient" + ritme;
+                        swing31.load(filename);
+                        swing31.setLoop(true);
+                        swing31.play();
+                    }
+                    else
+                        swing31.stop();
                     break;
                 case 2:
-                    filename = "Cavall" + ritme;
-                    swing32.load(filename);
-                    swing32.setLoop(true);
-                    swing32.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Cavall" + ritme;
+                        swing32.load(filename);
+                        swing32.setLoop(true);
+                        swing32.play();
+                    }
+                    swing32.stop();
                     break;
                 case 3:
-                    filename = "Guitarra" + ritme;
-                    swing33.load(filename);
-                    swing33.setLoop(true);
-                    swing33.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Guitarra" + ritme;
+                        swing33.load(filename);
+                        swing33.setLoop(true);
+                        swing33.play();
+                    }
+                    else
+                        swing33.stop();
                     break;
                     
                 case 4:
-                    filename = "Baix" + ritme;
-                    swing34.load(filename);
-                    swing34.setLoop(true);
-                    swing34.play();
+                    if (ritme != "NO_MUSIC"){
+                        filename = "Baix" + ritme;
+                        swing34.load(filename);
+                        swing34.setLoop(true);
+                        swing34.play();
+                    }
+                    else
+                        swing34.stop();
                     break;
                     
                 default:

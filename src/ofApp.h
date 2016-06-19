@@ -25,6 +25,9 @@ class ofApp : public ofBaseApp{
     
     int serverData[3][5]; // matriu que s'omple amb les dades del servidor, representa els tempos dels gronxadors
     
+    int prevServerData[3][5]; // matriu que s'omple amb les dades del servidor, representa els tempos dels gronxadors
+
+    
     void requestDataServer();
     
     int requestDataTimer = 0;
