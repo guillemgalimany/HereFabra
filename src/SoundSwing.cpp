@@ -10,10 +10,11 @@
 
 
 
-void SoundSwing::initialize(int id_, int installation_, string instrument){
+void SoundSwing::initialize(int id_, int installation_, string instrument_){
     
     id = id_;
     installation = installation_;
+    instrument = instrument_;
     
     string tempFilename = instrument + "Lent.mp3";
     soL.load(tempFilename,true);

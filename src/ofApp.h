@@ -61,6 +61,19 @@ class ofApp : public ofBaseApp{
     int installation2weight = 0;
 
     SoundController soundController;
+    
+    /////////// SOUND /////////////
+    void playSound (int installation, int swingID, int tempo);
+    
+    ofSoundPlayer swing21;
+    ofSoundPlayer swing22;
+    ofSoundPlayer swing23;
+    ofSoundPlayer swing24;
+    
+    ofSoundPlayer swing31;
+    ofSoundPlayer swing32;
+    ofSoundPlayer swing33;
+    ofSoundPlayer swing34;
 
 
     

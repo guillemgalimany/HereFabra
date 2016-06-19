@@ -37,10 +37,12 @@ void SoundController::playSwing(int id, int installation, int tempo){
 
     for (int i = 0; i < soundSwings.size(); i++){
         
-        if (installation == soundSwings[i].installation)
+        if (installation == soundSwings[i].installation) {
             if (id == soundSwings[i].id) {
                 soundSwings[i].playSound(tempo);
+                break;
             }
+        }
     }
 
 }
