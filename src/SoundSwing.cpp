@@ -18,14 +18,19 @@ void SoundSwing::initialize(int id_, int installation_, string instrument){
     string tempFilename = instrument + "Lent.mp3";
     soL.load(tempFilename,true);
     soL.setLoop(true);
+    soL.setMultiPlay(true);
     
     string tempFilename1 = instrument + "Mitja.mp3";
     soM.load(tempFilename1, true);
     soM.setLoop(true);
+    soM.setMultiPlay(true);
+
     
     string tempFilename2 = instrument + "Rapid.mp3";
     soH.load(tempFilename2, true);
     soH.setLoop(true);
+    soH.setMultiPlay(true);
+
     
 }
 
